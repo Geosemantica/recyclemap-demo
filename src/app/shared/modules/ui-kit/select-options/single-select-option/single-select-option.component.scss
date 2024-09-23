@@ -1,0 +1,53 @@
+@import "src/assets/styles/abstracts/mixins.scss";
+
+.select-filter-item {
+  @include typo-paragraph-small;
+
+  width: fit-content;
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+  font-weight: var(--weight-medium);
+}
+
+.select-filter-item:not(.active):hover {
+  .radio-indicator {
+    border-color: var(--neutrals-grey-400);
+  }
+}
+
+.radio-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 8px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: var(--border-thin);
+  box-sizing: border-box;
+}
+
+.radio-indicator.active {
+  border-color: var(--brand-primary-green);
+}
+
+.radio-indicator.active::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: var(--brand-primary-green);
+  border-radius: 50%;
+}
+
+.option-text-wrapper {
+  width: 100%;
+}
+
+.option-description {
+  margin-top: 4px;
+  font-weight: var(--weight-medium);
+  color: var(--neutrals-grey-500);
+}
+
+

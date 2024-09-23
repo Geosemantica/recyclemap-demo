@@ -1,0 +1,18 @@
+.root {
+  margin: 0;
+  padding-bottom: 12px;
+  border-bottom: var(--border-thin);
+  color: var(--color-text-primary);
+}
+
+.size_md {
+  font-weight: var(--weight-semibold);
+  font-size: var(--size-xxs);
+  line-height: var(--lh-xxs);
+}
+
+.size_lg {
+  font-weight: var(--weight-semibold);
+  font-size: var(--size-sm);
+  line-height: var(--lh-sm);
+}

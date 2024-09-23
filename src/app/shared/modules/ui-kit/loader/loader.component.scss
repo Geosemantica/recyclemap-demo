@@ -1,0 +1,13 @@
+@keyframes moving {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader-wrapper {
+  display: flex;
+}
+
+svg-icon {
+  animation: moving 3s infinite linear;
+}

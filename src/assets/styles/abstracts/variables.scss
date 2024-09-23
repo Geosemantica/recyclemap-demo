@@ -1,0 +1,215 @@
+/**
+ * Variables
+ * =================================
+ * - Typography (e.g. font sizes)
+ * - Colors (use HSL or RGB if possible)
+ * - Breakpoints
+ * - Paths
+ * - Layout & Grid
+ * - recycle-specific
+
+
+ Example: https://github.com/TryKickoff/scss/blob/master/_variables.scss
+
+ */
+
+:root {
+  // variables will be available in the app only from here
+
+  /*
+   * ============
+   * Colors
+   * ===========
+   */
+
+  --color-text-primary: #242627;
+  --heading-color: var(--color-text-primary);
+  --color-text-red: #eb584a;
+
+  --brand-primary-green: #68b114;
+  --brand-primary-green-darker: #528f0e;
+  --brand-secondary-green: #005c42;
+
+  --primary-accent: #ed671c;
+  --primary-accent-darker: #df4503;
+
+  --fraction-batteries-beige: #9a7b6d;
+  --fraction-caps-yellow: #daa219;
+  --fraction-clothes-pink: #ea4c99;
+  --fraction-danger-black: #242627;
+  --fraction-devices-burgundy: #b37270;
+  --fraction-glass-green: #227440;
+  --fraction-lamps-purple: #8f6eef;
+  --fraction-metal-red: #ed4649;
+  --fraction-other-grey: #a1a1aa;
+  --fraction-paper-blue: #4085f3;
+
+  --fraction-plastic-orange: var(--primary-accent);
+
+  --fraction-tetra-turquoise: #47baba;
+  --fraction-tires-brown: #594139;
+  --neutrals-black: #242627;
+  --neutrals-grey-25: #f9fafa;
+  --neutrals-grey-50: #f4f5f5;
+  --neutrals-grey-100: #ececee;
+  --neutrals-grey-200: #dfe0e4;
+  --neutrals-grey-300: #c4c8cf;
+  --neutrals-grey-350: #aaafb9;
+  --neutrals-grey-400: #8b919c;
+  --neutrals-grey-500: #6e7585;
+  --neutrals-grey-600: #4c5563;
+  --neutrals-white: #ffffff;
+  --status-error: #da292e;
+  --status-error-bg: #fbf0f0;
+  --status-error-stroke: #fbcccd;
+  --status-info: #1b78cf;
+  --status-info-bg: #f5f9ff;
+  --status-info-stroke: #cddbef;
+  --status-success: #1d9347;
+  --status-success-bg: #f7fdf7;
+  --status-success-stroke: #ddf1d3;
+  --status-warning: #9f680d;
+  --status-light-warning: #df8010;
+  --status-warning-bg: #fffce7;
+  --status-warning-stroke: #e4c592;
+
+  /*
+   Map stuff
+   */
+
+  /*
+   all scales map styles (все масштабы)
+  */
+
+  // map colors
+  --map-base-color: #3b88bf;
+
+  // breakpoints for scales
+  --map-min-large-zoom: 11; // max scale for medium zooms, and min scale for large zooms
+  --map-min-medium-zoom: 7; // max scale for small zooms, and min scale for medium zooms
+
+  // large scales map styles (крупный масштаб)
+  --map-large-zoom-circle-radius: 14;
+  --map-large-zoom-line-width: 4;
+
+  --map-large-zoom-light-line-max-opacity-zoom: 19;
+  --map-large-zoom-light-line-width: 1;
+  --map-large-zoom-light-line-min-opacity: 0.01;
+  --map-large-zoom-light-line-max-opacity: 0.25;
+
+  // medium scales map styles (средний масштаб)
+  --map-medium-zoom-circle-radius: 7;
+  --map-medium-zoom-line-width: 1;
+  // small scales map styles (мелкий масштаб)
+
+  --map-logo-size: 123px;
+
+  --map-attribution-icon-url: url('/assets/images/mapbox-attrib-icon-outline.svg');
+
+  /**
+   Layout sizes
+   */
+
+  --header-height: 56px;
+  --sidebar-base-width: 535px;
+  --points-filters-height: 374px;
+
+  --points-list-max-height: calc(100vh - var(--header-height) - var(--points-filters-height));
+
+  --add-point-max-height: calc(100vh - var(--header-height));
+  --comments-top-block-height: 124px;
+  --comments-bottom-block-height: 68px;
+
+  --comments-content-max-height: calc(
+    100vh - var(--header-height) - var(--comments-top-block-height) - var(--comments-bottom-block-height)
+  );
+  --mobile-map-container-overlap: 10px;
+  /*
+   * ============
+   * Typography
+   * ===========
+   */
+
+  --font-family-inter: "Inter", sans-serif;
+
+  // Font Sizes
+  --size-xxxxs: 10px;
+  --size-xxxs: 12px;
+  --size-xxs: 14px;
+  --size-xs: 15px;
+  --size-sm: 16px;
+  --size-md: 18px;
+  --size-xmd: 20px;
+  --size-lg: 24px;
+  --size-xl: 26px;
+  --size-xxl: 30px;
+  --size-xxxl: 60px;
+
+  // Line heights
+  --lh-xxxxs: 12px;
+  --lh-xxxs: 14px;
+  --lh-xxs: 16px;
+  --lh-xs: 20px;
+  --lh-sm: 22px;
+  --lx-md: 24px;
+  --lh-xmd: 28px;
+  --lh-lg: 32px;
+  --lh-xl: 36px;
+  --lh-xxl: 40px;
+
+
+
+
+  --pararaph-margin: 0 0 0;
+  --heading-margin: 0 0 0;
+
+  --heading-line-height: 145%;
+
+  // z-indexes
+
+  --z-low: 10;
+  --z-middle: 100;
+  --z-high: 1000;
+  --z-highest: 10000;
+
+  // shadows
+  --shadow-sidebar: 2px 0px 8px rgba(161, 161, 170, 0.4);
+  --shadow-sidebar-small: 0px -1px 8px 0px rgba(161, 161, 170, 0.30);
+  --shadow-bottom: 0px 1px 8px rgba(161, 161, 170, 0.3);
+  --shadow-low: 0px 6px 24px rgba(0, 0, 0, 0.15);
+  --shadow-map-item: 0px 0px 12px rgba(13, 32, 49, 0.2);
+  --shadow-searchbar: 0px 1px 4px rgba(156, 163, 175, 0.12);
+  --shadow-dialog: 0px 6px 24px rgba(36, 38, 39, 0.2);
+  --shadow-sidebar-top: 0px -1px 8px 0px rgba(161, 161, 170, 0.30);
+
+  // icons
+
+  // borders
+  --border-thin: 1px solid var(--neutrals-grey-200);
+  --border-dashed: 1px dashed var(--neutrals-grey-300);
+  --border-success: 2px solid var(--brand-primary-green);
+  --border-thick: 2px solid var(--neutrals-grey-400);
+  --border-searchbar: 1px solid var(--neutrals-grey-300);
+  --border-thin-error: 1px solid var(--status-error);
+  --border-thin-error-stroke: 1px solid var(--status-error-stroke);
+  --border-thin-warning-stroke: 1px solid var(--status-warning-stroke);
+
+  //font weights
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  //gradients
+
+  --multiple-fractions-gradient: conic-gradient(
+      from 90deg at 50% 50%,
+      #4DCDDF -90.34deg,
+      #487BC8 7.09deg,
+      #E85645 89.67deg,
+      #85BC2F 170.22deg,
+      #4DCDDF 269.66deg,
+      #487BC8 367.09deg
+  );
+}

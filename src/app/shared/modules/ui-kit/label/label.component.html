@@ -1,0 +1,21 @@
+<ng-container *ngIf="displayAsLabel; else notAsLabel">
+  <label [ngClass]="align">
+    <ng-container *ngTemplateOutlet="content">
+    </ng-container>
+  </label>
+</ng-container>
+
+<ng-template #notAsLabel>
+  <ng-container *ngTemplateOutlet="content"></ng-container>
+</ng-template>
+
+<ng-template #content>
+  <div  [ngClass]="align">
+    <div *ngIf="labelText" class="label-text">
+      <span>{{ labelText }}</span>
+      <span *ngIf="required" class="required">*</span>
+    </div>
+
+    <ng-content></ng-content>
+  </div>
+</ng-template>

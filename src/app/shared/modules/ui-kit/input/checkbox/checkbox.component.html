@@ -1,0 +1,11 @@
+<label class="container" [ngClass]="size">
+  <input
+    type="checkbox"
+    [checked]="value"
+    [disabled]="disabled"
+    (input)="onChange($event)"
+    (focus)="onFocus()"
+    (blur)="onBlur()"
+  >
+  <span class="checkmark" [ngClass]="classList"></span>
+</label>

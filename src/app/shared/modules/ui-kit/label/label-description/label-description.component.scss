@@ -1,0 +1,24 @@
+@import "src/assets/styles/abstracts/mixins";
+@import "include-media";
+.label-description {
+  @include typo-paragraph-small;
+
+  line-height: var(--lh-xxs);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-weight: var(--weight-semibold);
+  color: var(--neutrals-grey-500);
+  margin-bottom: 8px;
+  cursor: default;
+}
+
+.label-description span {
+  @include typo-font-tiny;
+
+  font-weight: var(--weight-medium);
+  color: var(--neutrals-grey-400);
+  @include media('<=tablet'){
+    @include typo-font-small;
+  }
+}

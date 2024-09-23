@@ -1,0 +1,13 @@
+@import "src/assets/styles/abstracts/mixins.scss";
+
+.user-full-name {
+  @include typo-font-small;
+
+  font-weight: var(--weight-medium);
+}
+
+.user-full-name.sm {
+  @include typo-font-tiny;
+
+  font-weight: var(--weight-medium);
+}

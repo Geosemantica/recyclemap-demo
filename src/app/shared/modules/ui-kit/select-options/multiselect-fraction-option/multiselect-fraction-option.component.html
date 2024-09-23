@@ -1,0 +1,11 @@
+<div
+  class="label"
+  [ngStyle]="{ 'background': isChecked ? activeBackgroundColor : greyBackground }"
+  (click)="checkboxToggle()"
+>
+  <rc-checkbox-input class="checkbox" size="small" [value]="isChecked"></rc-checkbox-input>
+
+  <span class="title" [ngClass]="{ active: isChecked }">
+    <ng-content></ng-content>
+  </span>
+</div>

@@ -1,0 +1,46 @@
+<div class="filters-wrapper">
+  <div class="fractions-top">
+    <span class="fractions-title">{{ 'RECYCLE_POINTS.FILTERS.FRACTIONS_TITLE' | translate }}</span>
+
+    <div *ngIf="multiselectControl.selectedIds.length as counter" class="reset-filters" (click)="resetFilters()">
+      <svg-icon class="reset-icon" key="delete-bin" size="sm" [color]="greyIcon"></svg-icon>
+
+      <span class="reset-text">{{ 'RECYCLE_POINTS.FILTERS.RESET' | translate: { counter } }}</span>
+    </div>
+  </div>
+
+  <div class="fractions-filter-items">
+    <rc-fractions-filter-item
+      *ngFor="let filterItem of fractions | async"
+      [filterItem]="filterItem"
+      [isActive]="isActive(filterItem.id)"
+      (click)="toggleFilterItem(filterItem.id)"
+    >
+    </rc-fractions-filter-item>
+  </div>
+
+  <ng-container [formGroup]="form.formGroup">
+    <div class="primary-filters-row">
+      <div class="primary-filters">
+        <rc-select-filter
+          class="select-filter"
+          formControlName="open"
+          [filtersOptions]="SCHEDULE_OPTIONS"
+          [initialButtonValue]="'RECYCLE_POINTS.FILTERS.SCHEDULE_TITLE' | translate"
+          [initialSelectedValue]="openState.ANY"
+        >
+        </rc-select-filter>
+
+        <rc-select-filter
+          class="select-filter"
+          formControlName="restricted"
+          [filtersOptions]="ACCESSIBILITY_OPTIONS"
+          [initialButtonValue]="'RECYCLE_POINTS.FILTERS.ACCESSIBILITY_TITLE' | translate"
+          [initialSelectedValue]="restrictedState.ALL_POINTS"
+        >
+        </rc-select-filter>
+      </div>
+    </div>
+
+  </ng-container>
+</div>

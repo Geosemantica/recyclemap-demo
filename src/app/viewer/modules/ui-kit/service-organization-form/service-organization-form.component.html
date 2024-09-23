@@ -1,0 +1,179 @@
+<div
+  class="new-organization"
+  [formGroup]="form.formGroup"
+>
+  <div class="new-organization-section">
+    <rc-label-description>
+      {{ 'POINT_FORM.SERVICE_ORGANIZATION.NAME' | translate }}
+    </rc-label-description>
+
+    <div>
+      <rc-input
+        rcFormControl
+        class="new-organization-field-input"
+        formControlName="title"
+        [placeholder]="'PLACEHOLDERS.ORGANIZATION_NAME' | translate"
+      >
+      </rc-input>
+
+      <rc-input-error [errors]="form.knownErrorsForControl('title')"></rc-input-error>
+    </div>
+  </div>
+
+  <div class="new-organization-section">
+    <rc-label-description>
+      {{ 'POINT_FORM.SERVICE_ORGANIZATION.WEB_SITE' | translate }}
+    </rc-label-description>
+
+    <ng-container formArrayName="sites">
+      <div
+        *ngFor="let webSite of form.organizationWebSites.controls; let index = index"
+        class="new-organization-field"
+      >
+        <div>
+          <rc-icon-input
+            rcFormControl
+            class="new-organization-field-input"
+            iconName="web"
+            [formControlName]="index.toString()"
+            [placeholder]="'PLACEHOLDERS.ORGANIZATION_WEB_SITE' | translate"
+          >
+          </rc-icon-input>
+
+          <rc-icon-button
+            *ngIf="index"
+            class="remove-field-button"
+            icon="delete-bin"
+            theme="error"
+            (click)="onRemoveFieldClick(MultipleOrganizationField.sites, index)"
+          >
+          </rc-icon-button>
+        </div>
+
+        <rc-input-error [errors]="form.knownErrorsForControl('sites', index)"></rc-input-error>
+      </div>
+    </ng-container>
+
+    <button
+      *ngIf="isAddFieldButtonVisible(MultipleOrganizationField.sites)"
+      rcLinkButton
+      class="add-field-button"
+      prefixIcon="plus"
+      type="button"
+      (click)="onAddNewFieldClick(MultipleOrganizationField.sites)"
+    >
+      {{ 'ACTIONS.ADD_WEB_SITE' | translate }}
+    </button>
+  </div>
+
+  <div class="new-organization-section">
+    <rc-label-description>
+      {{ 'POINT_FORM.SERVICE_ORGANIZATION.E_MAIL' | translate }}
+    </rc-label-description>
+
+    <ng-container formArrayName="emails">
+      <div
+        *ngFor="let webSite of form.organizationEMails.controls; let index = index"
+        class="new-organization-field"
+      >
+        <div>
+          <rc-icon-input
+            rcFormControl
+            class="new-organization-field-input"
+            iconName="mail"
+            [formControlName]="index.toString()"
+            [placeholder]="'PLACEHOLDERS.ORGANIZATION_E_MAIL' | translate"
+          >
+          </rc-icon-input>
+
+          <rc-icon-button
+            *ngIf="index"
+            class="remove-field-button"
+            icon="delete-bin"
+            theme="error"
+            (click)="onRemoveFieldClick(MultipleOrganizationField.emails, index)"
+          >
+          </rc-icon-button>
+        </div>
+
+        <rc-input-error [errors]="form.knownErrorsForControl('emails', index)"></rc-input-error>
+      </div>
+    </ng-container>
+
+    <button
+      *ngIf="isAddFieldButtonVisible(MultipleOrganizationField.emails)"
+      rcLinkButton
+      class="add-field-button"
+      prefixIcon="plus"
+      type="button"
+      (click)="onAddNewFieldClick(MultipleOrganizationField.emails)"
+    >
+      {{ 'ACTIONS.ADD_E_MAIL' | translate }}
+    </button>
+  </div>
+
+  <div class="new-organization-section">
+    <rc-label-description>
+      {{ 'POINT_FORM.SERVICE_ORGANIZATION.PHONE' | translate }}
+    </rc-label-description>
+
+    <ng-container formArrayName="phones">
+      <div
+        *ngFor="let phone of form.organizationPhones.controls; let index = index"
+        class="new-organization-field"
+      >
+        <div>
+          <rc-icon-input
+            rcFormControl
+            class="new-organization-field-input"
+            iconName="phone"
+            [formControlName]="index.toString()"
+            [placeholder]="'PLACEHOLDERS.ORGANIZATION_PHONE' | translate"
+          >
+          </rc-icon-input>
+
+          <rc-icon-button
+            *ngIf="index"
+            class="remove-field-button"
+            icon="delete-bin"
+            theme="error"
+            (click)="onRemoveFieldClick(MultipleOrganizationField.phones, index)"
+          >
+          </rc-icon-button>
+        </div>
+
+        <rc-input-error [errors]="form.knownErrorsForControl('phones', index)"></rc-input-error>
+      </div>
+    </ng-container>
+
+    <button
+      *ngIf="isAddFieldButtonVisible(MultipleOrganizationField.phones)"
+      rcLinkButton
+      class="add-field-button"
+      prefixIcon="plus"
+      type="button"
+      (click)="onAddNewFieldClick(MultipleOrganizationField.phones)"
+    >
+      {{ 'ACTIONS.ADD_PHONE' | translate }}
+    </button>
+  </div>
+</div>
+
+<div class="buttons-section">
+  <button
+    rcButton
+    size="lg"
+    theme="secondary"
+    type="button"
+  >
+    {{ 'ACTIONS.CANCEL' | translate }}
+  </button>
+
+  <button
+    rcButton
+    size="lg"
+    (click)="onSubmit()"
+  >
+    {{ 'ACTIONS.SAVE' | translate }}
+  </button>
+</div>

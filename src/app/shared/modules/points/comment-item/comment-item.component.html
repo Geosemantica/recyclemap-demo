@@ -1,0 +1,50 @@
+<div class="comment-item">
+  <div class="avatar-column">
+    <rc-user-avatar [user]="user"></rc-user-avatar>
+  </div>
+
+  <div  class="user-info-column">
+    <div class="user-name">
+      <rc-user-full-name [user]="user"></rc-user-full-name>
+
+      <span *ngIf="isModerator" class="moderator-tag badge">{{ 'POINT_CARD.MODERATOR_TAG' | translate }}</span>
+    </div>
+
+    <div class="comment-date">{{ date | rcDate }}</div>
+
+    <div>
+      <p class="comment-content">
+        {{ message }}
+      </p>
+
+      <div
+        *ngIf="photos.length"
+        class="comment-photos"
+        [gallerize]="'comment' + commentId"
+      >
+        <img
+          *ngFor="let photo of photos"
+          class="photo"
+          [alt]="photo.path"
+          [src]="STATIC_IMAGE_URL + photo.path"
+          [attr.imageSrc]="STATIC_IMAGE_URL + photo.path"
+        >
+      </div>
+    </div>
+
+    <div class="replies">
+      <rc-comment-item
+        *ngFor="let reply of publicReplies"
+        [parentCommentId]="commentId"
+        [commentId]="reply.commentId"
+        [message]="reply.message"
+        [photos]="reply.photoset"
+        [publicReplies]="reply.replies"
+        [date]="reply.timestamp"
+        [user]="reply.user"
+        (replyClicked)="onReplyClick($event)"
+      >
+      </rc-comment-item>
+    </div>
+  </div>
+</div>

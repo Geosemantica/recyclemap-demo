@@ -1,0 +1,17 @@
+.select-options {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.select-options.column {
+  flex-direction: column;
+}
+
+.select-options.row {
+  flex-direction: row;
+}
+
+.bottom-toolbar {
+  margin-top: 20px;
+}

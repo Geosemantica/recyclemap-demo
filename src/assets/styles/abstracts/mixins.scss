@@ -1,0 +1,77 @@
+@import "include-media";
+
+@mixin typo-font-family {
+  font-family: var(--font-family-inter);
+}
+
+@mixin typo-font {
+  @include typo-font-family;
+
+  font-size: var(--size-sm);
+  line-height: var(--lh-sm);
+  font-weight: var(--weight-medium);
+  @include media('<=tablet'){
+    font-size: var(--size-xs);
+    line-height: var(--lh-xs);
+  }
+}
+
+@mixin typo-font-small {
+  @include typo-font-family;
+
+  font-weight: var(--weight-regular);
+  font-size: var(--size-xxs);
+  line-height: var(--lh-xxs);
+  @include media('<=tablet'){
+    font-size: var(--size-xxxs);
+    line-height: var(--lh-xxs);
+  }
+}
+
+@mixin typo-font-tiny {
+  @include typo-font-family;
+
+  font-weight: var(--weight-regular);
+  font-size: var(--size-xxxs);
+  line-height: var(--lh-xxxs);
+  @include media('<=tablet'){
+    font-size: var(--size-xxxxs);
+    line-height: var(--lh-xxxs);
+  }
+}
+
+@mixin typo-font-extra-tiny {
+  @include typo-font-family;
+
+  font-weight: var(--weight-regular);
+  font-size: var(--size-xxxxs);
+  line-height: var(--lh-xxxxs);
+}
+
+@mixin typo-paragraph-small {
+  @include typo-font-family;
+
+  font-weight: var(--weight-regular);
+  font-size: var(--size-xxs);
+  line-height: 20px;
+}
+
+@mixin map-top-controls-wrapper {
+  .controls-wrapper {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 20px 0 20px;
+    top: 0;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+    z-index: var(--z-highest);
+    gap: 20px;
+    @include media('<=tablet'){
+      padding: 68px 12px 0 12px;
+    }
+  }
+
+}

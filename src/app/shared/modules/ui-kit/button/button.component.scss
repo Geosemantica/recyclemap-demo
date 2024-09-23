@@ -1,0 +1,185 @@
+@import "src/assets/styles/abstracts/mixins.scss";
+
+:host {
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: none;
+  text-decoration: none;
+}
+
+.rc-button span {
+  white-space: nowrap;
+}
+
+:host:not(:disabled):active, :host:not(:disabled):hover {
+  .primary, .primary-right-border-only {
+    background: var(--brand-primary-green-darker);
+  }
+  .primary-accent{
+    background: var(--primary-accent-darker);
+  }
+
+  .secondary,
+  .tertiary-green {
+    color: var(--brand-primary-green-darker);
+  }
+
+  .secondary-grey,
+  .tertiary-grey {
+    color: var(--neutrals-grey-500);
+  }
+
+  .secondary {
+    border: 1px solid var(--brand-primary-green-darker);
+  }
+
+  .secondary-grey {
+    border: 1px solid var(--neutrals-grey-500);
+  }
+}
+
+.rc-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+  color: var(--neutrals-white);
+  cursor: pointer;
+}
+
+.rc-button.xl.smaller-left-padding {
+  padding-left: 12px;
+}
+
+.rc-button.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.prefix, .postfix {
+  display: flex;
+  align-items: center;
+}
+
+.secondary,
+.tertiary-green {
+  color: var(--brand-primary-green);
+}
+
+.secondary-grey,
+.tertiary-grey {
+  color: var(--neutrals-grey-400);
+}
+
+.primary {
+  background: var(--brand-primary-green);
+}
+.primary-accent{
+  background: var(--primary-accent);
+}
+
+.secondary {
+  border: 1px solid var(--brand-primary-green);
+}
+
+.primary-error {
+  background: var(--status-error);
+}
+
+.secondary-error{
+  color: var(--status-error);
+  border: 1px solid var(--status-error);
+}
+
+.secondary-success {
+  color: var(--status-success);
+  border: 1px solid var(--status-success);
+}
+
+.secondary-grey {
+  border: 1px solid var(--neutrals-grey-400);
+}
+
+.rc-button.xs {
+  @include typo-font-tiny;
+
+  padding: 0 8px;
+  border-radius: 5px;
+  height: 26px;
+  font-weight: var(--weight-medium);
+}
+
+.rc-button.xs .prefix {
+  margin-right: 4px;
+}
+
+.rc-button.xs .postfix {
+  margin-left: 4px;
+}
+
+.rc-button.sm {
+  @include typo-paragraph-small;
+
+  padding: 0 10px;
+  border-radius: 6px;
+  height: 28px;
+  font-weight: var(--weight-medium);
+}
+
+.rc-button.md {
+  @include typo-paragraph-small;
+
+  padding: 0 12px;
+  border-radius: 6px;
+  height: 32px;
+  font-weight: var(--weight-medium);
+}
+
+.rc-button.lg {
+  @include typo-font;
+
+  padding: 0 12px;
+  border-radius: 6px;
+  height: 36px;
+  font-weight: var(--weight-medium);
+}
+
+.rc-button.sm .prefix,
+.rc-button.md .prefix,
+.rc-button.lg .prefix {
+  margin-right: 6px;
+}
+
+.rc-button.sm .postfix,
+.rc-button.md .postfix,
+.rc-button.lg .postfix {
+  margin-left: 6px;
+}
+
+.rc-button.xl {
+  @include typo-font;
+
+  padding: 0 16px;
+  border-radius: 6px;
+  height: 40px;
+  font-weight: var(--weight-medium);
+}
+
+.rc-button.primary-right-border-only {
+  background: var(--brand-primary-green);
+  border-radius: 0 8px 8px 0;
+}
+
+.rc-button.xl .prefix {
+  margin-right: 8px;
+}
+
+.rc-button.xl .postfix {
+  margin-left: 8px;
+}

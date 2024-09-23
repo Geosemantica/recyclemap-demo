@@ -1,0 +1,23 @@
+<div class="input-wrapper">
+  <span *ngIf="prefix" class="prefix">
+    <ng-template [ngTemplateOutlet]="prefix"></ng-template>
+  </span>
+
+  <input
+    #input
+    [ngClass]="classList"
+    [value]="value"
+    [placeholder]="placeholder"
+    [type]="type"
+    [disabled]="disabled"
+    [readonly]="readonly"
+    [autocomplete]="autocomplete"
+    (input)="onInput($event)"
+    (focus)="onFocus()"
+    (blur)="onBlur()"
+  />
+
+  <span *ngIf="postfix" class="postfix" [ngClass]="{ 'skip-point-events': isDropdown }">
+    <ng-template [ngTemplateOutlet]="postfix"></ng-template>
+  </span>
+</div>

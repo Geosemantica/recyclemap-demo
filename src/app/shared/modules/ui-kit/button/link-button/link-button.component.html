@@ -1,0 +1,13 @@
+<span class="rc-link-button" [ngClass]="classList">
+  <span *ngIf="prefixIcon" class="prefix">
+    <svg-icon [size]="iconSize" [key]="prefixIcon"></svg-icon>
+  </span>
+
+  <span>
+    <ng-content></ng-content>
+  </span>
+
+  <span *ngIf="postfixIcon" class="postfix">
+    <svg-icon size="sm" [key]="prefixIcon"></svg-icon>
+  </span>
+</span>

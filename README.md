@@ -1,27 +1,47 @@
-# RcDemo
+# Recyclemap Demo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.3.
+## Project Description
 
-## Development server
+**Recyclemap Demo** is a demonstration project.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Key Features
 
-## Code scaffolding
+- **UI kit demo** page:
+  - Markers - several marker options placed on the map, including a popup with the point's name and accepted fractions
+  - Public filters - for filtering recycling points by fractions, working hours, and availability, 
+  - Service organization form - a form for adding a service organization to a recycling point   
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Comments module demo** page:
+  - A public comment section for the recycling point
 
-## Build
+## Installation and Running the Project
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Clone the repository:
+    ```bash
+    git clone <repository-url>
+    ```
 
-## Running unit tests
+2. Navigate to the project directory:
+    ```bash
+    cd rc-demo
+    ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. Install dependencies:
+    ```bash
+    npm install
+    ```
 
-## Running end-to-end tests
+4. Run the project:
+    ```bash
+    ng serve
+    ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+5. Open the project in your browser at:
+    ```
+    http://localhost:5000
+    ```
 
-## Further help
+## Usage Example
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Visit the **UI kit demo** page to view markers, public filters, and the service organization form.
+- Visit the **Comments module demo** page to view the public version of the comments block.

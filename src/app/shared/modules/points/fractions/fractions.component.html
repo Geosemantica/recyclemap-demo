@@ -1,0 +1,11 @@
+<div class="fractions-wrapper">
+  <div
+    *ngFor="let fraction of fractions"
+    class="fraction-item"
+    [ngStyle]="{ backgroundColor: fraction.color }"
+  >
+    <svg-icon class="fraction-icon" size="xs" [key]="fractionIconName(fraction)"></svg-icon>
+
+    <p>{{ 'RECYCLE_POINTS.FRACTION_NAME.' + fraction.type + '.' + fraction.name | translate }}</p>
+  </div>
+</div>

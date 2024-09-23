@@ -1,0 +1,92 @@
+.container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+
+.container.medium {
+  height: 16px;
+  width: 16px;
+}
+
+.container.small {
+  height: 14px;
+  width: 14px;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  background: var(--neutrals-white);
+  border: var(--border-thin);
+  border-radius: 3px;
+}
+
+.checkmark.primary {
+  border: var(--border-searchbar);
+}
+
+.checkmark.disabled {
+  background: var(--neutrals-grey-50);
+  cursor: default;
+}
+
+.checkmark.medium {
+  height: 16px;
+  width: 16px;
+}
+
+.checkmark.small {
+  height: 14px;
+  width: 14px;
+}
+
+.checkmark.error {
+  border-color: var(--status-error);
+}
+
+.container:hover input ~ .checkmark:not(.error, .disabled) {
+  border-color: var(--neutrals-grey-400);
+}
+
+.checkmark:after {
+  content: url("~src/assets/icons/ui/common/checkmark.svg");
+  position: absolute;
+  display: none;
+}
+
+.checkmark.primary:after {
+  content: url("~src/assets/icons/ui/common/checkmark-white.svg");
+  position: absolute;
+  display: none;
+}
+
+.checkmark.medium:after {
+  bottom: -1px;
+  right: 1px;
+}
+
+.checkmark.small:after {
+  bottom: -2px;
+  right: 0;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container input:checked ~ .checkmark.primary {
+  background: var(--brand-primary-green);
+  border: 1px solid var(--brand-primary-green);
+}
+

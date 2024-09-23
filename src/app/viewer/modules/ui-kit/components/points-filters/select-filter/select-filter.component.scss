@@ -1,0 +1,75 @@
+@import "src/assets/styles/abstracts/mixins.scss";
+
+.select-filter {
+  width: fit-content;
+  position: relative;
+}
+
+.dropdown {
+  margin-top: 8px;
+  white-space: nowrap;
+  background: var(--neutrals-white);
+  position: absolute;
+  padding: 0 16px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-low);
+  z-index: var(--z-low);
+}
+
+.dropdown.right {
+  right: 0;
+}
+
+.dropdown.left {
+  left: 0;
+}
+
+.expand-icon {
+  margin-left: 6px;
+  transform: rotate(-90deg);
+}
+
+.expand-icon.expanded {
+  transform: rotate(90deg);
+}
+
+.select-filter-item {
+  @include typo-font-small;
+
+  margin: 16px 0;
+  display: flex;
+  cursor: pointer;
+  font-weight: var(--weight-medium);
+}
+
+.select-filter-item:not(.active):hover {
+  .radio-indicator {
+    border-color: var(--neutrals-grey-400);
+  }
+}
+
+.radio-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 8px;
+  min-width: 16px;
+  max-width: 16px;
+  min-height: 16px;
+  max-height: 16px;
+  border-radius: 50%;
+  border: var(--border-thin);
+  box-sizing: border-box;
+}
+
+.radio-indicator.active {
+  border-color: var(--brand-primary-green);
+}
+
+.radio-indicator.active::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: var(--brand-primary-green);
+  border-radius: 50%;
+}

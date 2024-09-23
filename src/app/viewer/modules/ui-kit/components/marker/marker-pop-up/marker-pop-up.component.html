@@ -1,0 +1,32 @@
+<div class="marker-pop-up" [ngClass]="{ 'single-point': !!title }">
+  <div class="fractions-wrapper">
+    <div
+      *ngFor="let fraction of fractions"
+      class="fraction-item"
+      [ngStyle]="{ backgroundColor: fraction.color }"
+    >
+
+      <svg-icon class="fraction-icon" size="xs" [key]="fractionIconName(fraction)"></svg-icon>
+    </div>
+  </div>
+
+  <span *ngIf="title" class="point-title">{{ title }}</span>
+
+  <span *ngIf="total" class="points-counter">{{ 'MARKER_POP_UP.TOTAL' | translate: { total } }}</span>
+
+  <span
+    *ngIf="userRole === UserRole.MODERATOR"
+    class="points-badges"
+  >
+    <rc-badge-group
+      direction="colum-list"
+      badgeSize="xxs"
+      [missMod]="missMod"
+      [needMod]="needMod"
+      [myAoR]="myAoR"
+      [moderatorMod]="true"
+      [popUpMode]="true"
+    >
+    </rc-badge-group>
+  </span>
+</div>

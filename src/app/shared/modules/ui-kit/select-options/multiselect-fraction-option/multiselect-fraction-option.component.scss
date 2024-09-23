@@ -1,0 +1,27 @@
+@import "src/assets/styles/abstracts/mixins";
+
+.label {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  width: 150px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.checkbox {
+  margin-left: 8px;
+  pointer-events: none;
+}
+
+.title {
+  @include typo-font-small;
+
+  margin-left: 8px;
+  color: var(--neutrals-grey-600);
+  font-weight: var(--weight-medium);
+}
+
+.title.active {
+  color: var(--neutrals-white);
+}

@@ -1,0 +1,41 @@
+:host {
+  width: 100%;
+}
+
+.new-organization {
+  margin-top: 20px;
+}
+
+.new-organization-field + .new-organization-field {
+  display: flex;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.new-organization-field div {
+  display: flex;
+  width: 100%;
+}
+
+.new-organization-field-input {
+  width: 100%;
+}
+
+.remove-field-button {
+  margin-left: 12px;
+}
+
+.new-organization-section {
+  margin-top: 16px;
+}
+
+.buttons-section {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.add-field-button {
+  margin-top: 16px;
+}

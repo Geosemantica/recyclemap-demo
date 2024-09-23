@@ -1,0 +1,46 @@
+<div
+  #containerRef
+  class="select-filter"
+  [ngClass]="theme"
+>
+  <rc-select-button
+    [theme]="theme"
+    [value]="hasSelected"
+    [disabled]="true"
+    [ngClass]="{ selected: hasSelected }"
+    (click)="toggleDropdown()"
+  >
+    {{ getCurrentFilterValue | async }}
+
+    <svg-icon
+      class="expand-icon"
+      [ngClass]="{ expanded: isDropdownShown }"
+      size="sm"
+      key="arrow-big-left"
+      [color]="getIconColor"
+    >
+    </svg-icon>
+  </rc-select-button>
+
+  <div
+    *ngIf="isDropdownShown"
+    class="dropdown"
+    tabindex="0"
+    [ngClass]="align"
+  >
+    <div
+      *ngFor="let filterOption of filtersOptions"
+      class="select-filter-item"
+      [ngClass]="{ active: isSelected(filterOption.filterKey) }"
+      (click)="selectOption(filterOption.filterKey)"
+    >
+      <ng-container [ngSwitch]="filtersSelectionType">
+        <ng-container *ngSwitchCase="FiltersSelectionType.SINGLE">
+          <span class="radio-indicator" [ngClass]="{ active: isSelected(filterOption.filterKey) }"> </span>
+        </ng-container>
+      </ng-container>
+
+      <span>{{ 'FILTER_OPTIONS.' + filterOption.filterKey | uppercase | translate }}</span>
+    </div>
+  </div>
+</div>

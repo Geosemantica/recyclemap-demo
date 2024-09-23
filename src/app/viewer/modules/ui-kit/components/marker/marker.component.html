@@ -1,0 +1,68 @@
+<div class="marker" [ngClass]="classList">
+  <ng-container *ngIf="!marker.isSmallPin; else smallPin">
+    <ng-container *ngIf="!asDraggablePin; else draggablePin">
+      <div
+        *ngIf="isConicGradientMarker; else pieChart"
+        class="conic-gradient-diagram"
+      >
+      </div>
+
+      <ng-template #pieChart>
+        <div
+          class="pie-chart"
+          [style]="{ '--slice-percent': getSlicePercent + '%' }"
+          [ngClass]="{ double: isDouble, single: isSingle }"
+        >
+          <div
+            *ngFor="let fraction of marker.fractions; let i = index"
+            [ngClass]="disabledPinClassList"
+            [ngStyle]="{ background: fraction.color, transform: 'rotate(' + getRotationDegree(marker.fractions.length, i) + 'deg)' }"
+          >
+          </div>
+        </div>
+      </ng-template>
+
+      <div
+        *ngIf="marker.needMod"
+        class="pin-status"
+        [ngClass]="marker.myAoR? 'pin-status-myaor': ''"
+      >
+        <!--use img instead of using svg-icon because it has some side effects with align-->
+        <img src="assets/svg/common/time-pin.svg" alt="">
+      </div>
+
+      <div class="marker-center">
+        <img *ngIf="marker.restricted" src="assets/svg/common/lock.svg" class="restricted" alt="">
+      </div>
+    </ng-container>
+
+    <ng-template #draggablePin>
+      <div
+        *ngIf="marker.needMod"
+        class="pin-status"
+        [ngClass]="marker.myAoR? 'pin-status-myaor': ''"
+      >
+        <!--use img instead of using svg-icon because it has some side effects with align-->
+        <img src="assets/svg/common/time-pin.svg" alt="">
+      </div>
+
+      <svg-icon class="marker-center" [key]="draggablePinIcon" size="md"></svg-icon>
+    </ng-template>
+  </ng-container>
+
+  <ng-template #smallPin>
+    <svg-icon class="small-pin-icon" [key]="smallPinIcon"></svg-icon>
+  </ng-template>
+
+  <rc-marker-pop-up
+    *ngIf="marker.active || isPopupHovered"
+    class="marker-pop-up"
+    [fractions]="marker.fractions"
+    [title]="marker.title"
+    [needMod]="marker.needMod"
+    [missMod]="marker.missMod"
+    [myAoR]="marker.myAoR"
+    [userRole]="marker.userRole"
+  >
+  </rc-marker-pop-up>
+</div>

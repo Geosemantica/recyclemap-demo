@@ -1,0 +1,49 @@
+<div class="comments">
+  <div class="comments-header">
+    <div class="comments-top">
+      <a class="go-back">
+        <svg-icon
+          key="arrow-big-left"
+          class="go-back-icon"
+          size="sm"
+        >
+        </svg-icon>
+
+        <span class="comments-top__actions-back">{{ 'ACTIONS.BACK' | translate }}</span>
+      </a>
+
+      <div class="comments-top__title">
+        {{ 'COMMENTS.TITLE' | translate: { counter: totalComments | async } }}
+      </div>
+
+      <svg-icon
+        class="comments-top__pen-icon"
+        key="pen"
+        size="md"
+      >
+      </svg-icon>
+
+      <p class="point-name">{{ pointTitle | async }}</p>
+    </div>
+  </div>
+
+  <div class="comments-wrapper">
+    <div class="comments-content">
+      <ng-content select="[commentItem]"></ng-content>
+
+      <div *ngIf="!(totalComments | async)" class="no-comments">
+        {{ 'COMMENTS.BE_THE_FIRST_WHO_LEAVED_A_COMMENT' | translate }}
+      </div>
+    </div>
+  </div>
+
+  <div class="comments-add">
+    <button
+      rcButton
+      class="comments-add__leave-comment"
+      size="lg"
+    >
+      {{ 'ACTIONS.LEAVE_COMMENT' | translate }}
+    </button>
+  </div>
+</div>

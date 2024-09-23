@@ -1,0 +1,17 @@
+<button
+  class="rc-icon-button"
+  type="button"
+  [disabled]="disabled"
+  [title]="iconTitle"
+  [ngClass]="classList"
+>
+  <ng-content select="[toast]"></ng-content>
+  <svg-icon
+    [size]="iconSize"
+    [key]="icon"
+    [color]="color"
+  >
+  </svg-icon>
+
+  <span *ngIf="title">{{ title }}</span>
+</button>

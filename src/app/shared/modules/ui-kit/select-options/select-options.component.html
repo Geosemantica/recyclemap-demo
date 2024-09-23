@@ -1,0 +1,9 @@
+<div class="select-options-wrapper">
+  <div class="select-options" [ngClass]="direction" tabindex="0" (blur)="onBlur()">
+    <ng-content></ng-content>
+  </div>
+
+  <div *ngIf="bottomToolbar" class="bottom-toolbar">
+    <ng-container *ngTemplateOutlet="bottomToolbar"></ng-container>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+/**
+ * Base
+ * =======================
+ * Add only the styles that used across the application.
+ * Attention! Firstly check whether your scss can be placed in components folder.
+
+ */
+
+@import "include-media";
+
+html {
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  bottom: 40px;
+  top: 0;
+  right: 0;
+  left: 0;
+  color: var(--color-text-primary);
+}
+
+
+@include media("<=tablet") {
+  body {
+    height: 100vh; /* Use vh as a fallback for browsers that do not support Custom Properties */
+    touch-action: manipulation;
+  }
+}

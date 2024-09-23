@@ -1,0 +1,120 @@
+/*
+ * Typography
+ * =================================
+ * – Custom fonts
+ * - Base
+ * - Paragraphs
+ * - Headings
+ * - Type sizes
+ * - Misc
+ * - Utilities
+ * Example: https://github.com/TryKickoff/scss/blob/master/_typography.scss
+ */
+
+@import "src/assets/styles/abstracts/variables";
+
+* {
+  font-family: var(--font-family-inter);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--font-family-inter);
+  font-weight: 700;
+  margin: 0;
+}
+
+h1 {
+  font-size: var(--size-lg);
+  line-height: var(--lh-lg);
+  @include media('<=tablet'){
+    font-size: var(--size-xmd);
+    line-height: var(--lh-xmd);
+  }
+}
+
+h2 {
+  font-size: var(--size-sm);
+  line-height: var(--lh-sm);
+  @include media('<=tablet'){
+    font-size: var(--size-md);
+    line-height: var(--lh-md);
+  }
+}
+
+h3 {
+  font-size: var(--size-lg);
+  line-height: var(--lh-lg);
+  @include media('<=tablet'){
+    font-size: var(--size-xmd);
+    line-height: var(--lh-xmd);
+  }
+}
+
+
+h4 {
+  font-size: var(--size-xmd);
+  line-height: var(--lh-xmd);
+  @include media('<=tablet'){
+    font-size: var(--size-md);
+    line-height: var(--lh-md);
+  }
+}
+
+h5 {
+  margin: 0;
+  font-size: var(--size-md);
+  line-height: var(--lh-md);
+  @include media('<=tablet'){
+    font-size: var(--size-sm);
+    line-height: var(--lh-sm);
+  }
+}
+
+p {
+  margin: 0;
+}
+
+
+.tx-bold {
+  font-weight: 700 !important;
+}
+
+.tx-semibold {
+  font-weight: 600 !important;
+}
+
+.tx-medium {
+  font-weight: 500 !important;
+}
+
+.tx-regular {
+  font-weight: 400 !important;
+}
+
+.tx-underlined {
+  text-decoration-line: underline !important;
+}
+
+
+.paragraph-small {
+  font-weight: 400;
+  font-size: var(--size-xxs);
+  line-height: var(--lh-xs);
+}
+
+.text-tiny {
+  font-weight: 400;
+  font-size: var(--size-xxxs);
+  line-height: var(--lh-xxxs);
+}
+
+.text-extra-tiny {
+  font-weight: 400;
+  font-size: var(--size-xxxxs);
+  line-height: var(--lh-xxxxs);
+}
+

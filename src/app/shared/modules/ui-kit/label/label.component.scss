@@ -1,0 +1,25 @@
+@import "src/assets/styles/abstracts/mixins";
+
+:host {
+  width: 100%;
+}
+
+.label-text {
+  @include typo-font;
+
+  font-weight: var(--weight-semibold);
+  color: var(--neutrals-black);
+  margin-bottom: 12px;
+}
+
+.required {
+  color: var(--status-error)
+}
+
+label, div {
+  display: flex;
+}
+
+label.column, div.column {
+  flex-direction: column;
+}

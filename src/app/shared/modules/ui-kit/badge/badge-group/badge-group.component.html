@@ -1,0 +1,52 @@
+<div class="badges-container" [ngClass]="classList">
+  <rc-badge
+    *ngIf="myEdits"
+    badgeIcon="edit"
+    [size]="badgeSize"
+    [badgeText]="'POINT_CARD.MY_EDIT' | translate"
+  >
+  </rc-badge>
+
+  <rc-badge
+    *ngIf="myPoint"
+    badgeIcon="recycle"
+    [size]="badgeSize"
+    [badgeText]="'POINT_CARD.ADDED_BY_ME' | translate"
+  >
+  </rc-badge>
+
+  <rc-badge
+    *ngIf="inProgress || needMod && !moderatorMod"
+    badgeIcon="time"
+    theme="secondary-warning"
+    [size]="badgeSize"
+    [badgeText]="'POINT_CARD.IN_MODERATION_PROGRESS' | translate"
+  >
+  </rc-badge>
+
+  <rc-badge
+    *ngIf="myAoR && !popUpMode"
+    badgeIcon="rectangle"
+    theme="secondary-green"
+    [size]="badgeSize"
+    [badgeText]="'POINT_CARD.MY_AOR' | translate"
+  >
+  </rc-badge>
+
+  <rc-badge
+    *ngIf="missMod"
+    badgeIcon="no-moderator"
+    [size]="badgeSize"
+    [badgeText]="'POINT_CARD.NO_MODERATOR' | translate"
+  >
+  </rc-badge>
+
+  <rc-badge
+    *ngIf="needMod && moderatorMod"
+    badgeIcon="time"
+    [theme]="myAoR? 'secondary-error' : 'secondary-warning'"
+    [size]="badgeSize"
+    [badgeText]="'POINT_CARD.WAITING_FOR_MODERATION' | translate"
+  >
+  </rc-badge>
+</div>

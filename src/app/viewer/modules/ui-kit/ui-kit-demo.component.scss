@@ -1,0 +1,39 @@
+@import 'src/assets/styles/abstracts/mixins.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 0 20px;
+  height: calc(100vh - var(--header-height));
+  overflow: auto;
+
+  .ui-kit-section {
+    margin-top: 20px;
+
+    .content {
+      display: flex;
+      align-items: end;
+      margin-top: 16px;
+      padding: 20px;
+      gap: 20px;
+      box-shadow: var(--shadow-map-item);
+      border-radius: 8px;
+      width: fit-content;
+      background: var(--neutrals-grey-25);
+    }
+
+    .markers {
+      padding: 140px 110px 10px 110px;
+    }
+
+    .filters {
+      padding: 0;
+      width: 535px;
+    }
+
+    .service-organization {
+      width: 400px;
+    }
+  }
+}

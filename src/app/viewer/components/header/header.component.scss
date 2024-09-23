@@ -1,0 +1,110 @@
+@import "src/assets/styles/abstracts/mixins.scss";
+
+$main-gap: 32px;
+$main-gap-mobile: 12px;
+
+:host {
+  position: relative;
+}
+
+.header {
+  position: sticky;
+  z-index: var(--z-highest);
+  width: 100%;
+  text-align: left;
+  box-shadow: var(--shadow-bottom);
+  box-sizing: border-box;
+  background: white;
+  padding: 12px 20px;
+  gap: $main-gap;
+
+  .desktop-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .desktop-nav--left{
+      gap: 8px;
+    }
+  }
+
+  .header-menu-btn{
+    background: unset;
+    border: unset;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .desktop-nav {
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+  }
+  .desktop-nav, .logos{
+    gap: $main-gap;
+  }
+
+  .user-nav {
+    display: flex;
+    gap: 16px;
+  }
+
+  .user-nav-avatar {
+    cursor: pointer;
+  }
+}
+
+.main-nav {
+  display: inline-block;
+  margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+
+  ul {
+    padding: 0;
+    margin: 0;
+    gap: 8px;
+    li {
+      display: inline-block;
+      vertical-align: middle;
+      list-style-type: none;
+      box-sizing: border-box;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .menu-item-link {
+    @include typo-font-small();
+
+    font-weight: var(--weight-medium);
+    cursor: pointer;
+    padding: 8px;
+
+    a, div {
+      text-decoration: unset;
+      color: var(--neutrals-black);
+    }
+  }
+
+  .menu-item-link:hover {
+    color: var(--brand-primary-green);
+    text-decoration: underline;
+
+    a, div {
+      color: var(--brand-primary-green);
+    }
+  }
+
+  .menu-item-link.highlighted {
+    color: var(--fraction-plastic-orange) !important;
+    font-weight: var(--weight-semibold) !important;
+  }
+
+}
+
+.main-nav--hidden {
+  display: none;
+}

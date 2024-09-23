@@ -1,0 +1,43 @@
+@import "src/assets/styles/abstracts/mixins.scss";
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: var(--weight-medium);
+}
+
+.badge-text {
+  font-weight: var(--weight-medium);
+}
+
+.primary {
+  color: var(--neutrals-grey-500);
+}
+
+.secondary-warning {
+  color: var(--status-warning);
+}
+
+.secondary-green {
+  color: var(--brand-secondary-green);
+}
+
+.secondary-error {
+  color: var(--status-error);
+}
+
+.xs {
+  .badge-text {
+    font-size: var(--size-xxs)
+  }
+}
+
+.xxs {
+  .badge-text {
+    font-size: var(--size-xxxs);
+  }
+  .badge-icon {
+    margin-bottom: 2px;
+  }
+}

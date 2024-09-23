@@ -1,0 +1,17 @@
+<span class="rc-button" [ngClass]="classList" (click)="onClick($event)">
+  <span *ngIf="prefixIcon" class="prefix">
+    <svg-icon [size]="iconSize" [key]="prefixIcon"></svg-icon>
+  </span>
+
+  <span *ngIf="loading" class="prefix">
+    <rc-loader [size]="iconSize" [color]="iconColor"></rc-loader>
+  </span>
+
+  <span>
+    <ng-content></ng-content>
+  </span>
+
+  <span *ngIf="postfixIcon" class="postfix">
+    <svg-icon [size]="iconSize" [key]="prefixIcon"></svg-icon>
+  </span>
+</span>

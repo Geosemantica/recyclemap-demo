@@ -1,0 +1,56 @@
+@import "src/assets/styles/abstracts/mixins.scss";
+
+.marker-pop-up {
+  display: flex;
+  flex-direction: column;
+  max-width: 240px;
+  padding: 6px 9px 12px 9px;
+  background: var(--neutrals-white);
+  border-radius: 8px;
+  box-sizing: border-box;
+  box-shadow: var(--shadow-low);
+
+  .point-title {
+    @include typo-font-small;
+
+    font-weight: var(--weight-semibold);
+    color: var(--neutrals-black);
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  .points-counter {
+    @include typo-font-small;
+
+    margin-top: 8px;
+    text-align: center;
+    color: var(--neutrals-black);
+  }
+
+
+
+  .points-badges {
+    margin-top: 8px;
+  }
+
+  .fractions-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .fraction-item {
+      display: flex;
+      padding: 5px;
+      margin: 6px 3px 0 3px;
+      border-radius: 6px;
+
+      .fraction-icon {
+        color: var(--neutrals-white);
+      }
+    }
+  }
+}
+
+.marker-pop-up.single-point {
+  width: 240px;
+}

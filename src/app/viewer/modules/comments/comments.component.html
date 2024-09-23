@@ -1,0 +1,17 @@
+<ng-container [ngSwitch]="null">
+<!--  <rc-moderator-comments-->
+<!--    *ngSwitchCase="UserRole.MODERATOR"-->
+<!--    [commentsModeratorMode]="commentsModeratorMode"-->
+<!--  >-->
+<!--  </rc-moderator-comments>-->
+
+<!--  <rc-authorized-user-comments-->
+<!--    *ngSwitchCase="UserRole.USER"-->
+<!--  >-->
+<!--  </rc-authorized-user-comments>-->
+
+  <rc-unauthorized-user-comments
+    *ngSwitchDefault
+  >
+  </rc-unauthorized-user-comments>
+</ng-container>

@@ -1,0 +1,42 @@
+@import "src/assets/styles/abstracts/mixins.scss";
+
+.user-avatar-wrapper {
+  @include typo-font-tiny;
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--neutrals-grey-200);
+  border-radius: 50%;
+  color: var(--neutrals-black);
+  font-weight: var(--weight-medium);
+}
+
+.user-avatar-wrapper.xs span {
+  @include typo-font-extra-tiny;
+
+  font-weight: var(--weight-medium);
+}
+
+.user-avatar-wrapper.xs {
+  width: 24px;
+  height: 24px;
+}
+
+.user-avatar-wrapper.sm {
+  width: 32px;
+  height: 32px;
+}
+
+.user-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.moderator-badge {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}

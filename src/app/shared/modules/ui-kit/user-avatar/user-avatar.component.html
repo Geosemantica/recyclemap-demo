@@ -1,0 +1,22 @@
+<div class="user-avatar-wrapper" [ngClass]="classList">
+  <img
+    *ngIf="user.avatar && user.avatar.length; else emptyAvatar"
+    class="user-avatar"
+    [alt]="'ALT_CONTENT.USER_AVATAR' | translate"
+    [src]="user.avatar[0].path"
+  >
+
+  <svg-icon
+    *ngIf="isModerator"
+    class="moderator-badge"
+    key="moderator-badge-filled"
+    size="xxs"
+  >
+  </svg-icon>
+
+  <ng-template #emptyAvatar>
+    <span>
+      {{ getInitials }}
+    </span>
+  </ng-template>
+</div>

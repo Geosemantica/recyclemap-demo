@@ -1,0 +1,13 @@
+@import "src/assets/styles/abstracts/mixins";
+
+.input-error {
+  @include typo-font-tiny;
+
+  color: var(--status-error);
+  font-weight: var(--weight-medium);
+  margin-bottom: 0;
+}
+
+.input-error.margin {
+  margin-top: 8px;
+}

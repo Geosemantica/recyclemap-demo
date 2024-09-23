@@ -1,0 +1,179 @@
+@import "src/assets/styles/abstracts/mixins.scss";
+
+.comment-item,
+.right-col,
+.comment-photos,
+.user-name,
+.comment-status,
+.comment-status-dropdown,
+.user-actions,
+.mod-menu-item,
+.user-name {
+  display: flex;
+}
+
+.user-name,
+.comment-status,
+.user-actions,
+.mod-menu-item {
+  align-items: center;
+}
+
+.comment-item {
+  padding: 4px 0;
+}
+
+.avatar-column {
+  margin-right: 12px;
+}
+
+.user-info-column {
+  flex-direction: column;
+  width: 100%;
+}
+
+.user-name {
+  @include typo-font-small;
+
+  font-weight: var(--weight-medium);
+}
+
+.badge {
+  @include typo-font-extra-tiny;
+
+  color: var(--neutrals-white);
+  font-weight: var(--weight-semibold);
+  border-radius: 3px;
+}
+
+.green-badge {
+  background-color: var(--status-success);
+}
+
+.yellow-badge {
+  background-color: var(--status-light-warning);
+}
+
+.red-badge {
+  background-color: var(--status-error);
+}
+
+.moderator-tag {
+  padding: 1px 3px 2px;
+  margin-left: 8px;
+  background-color: var(--brand-secondary-green);
+}
+
+.comment-status {
+  padding: 0 3px;
+  justify-content: center;
+  width: fit-content;
+  cursor: pointer;
+  height: 16px;
+}
+
+.expand-icon {
+  margin: 0 3px;
+  transform: rotate(-90deg);
+  width: 10px;
+  height: 10px;
+}
+
+.comment-status-dropdown {
+  margin-top: 8px;
+  background: var(--neutrals-white);
+  position: absolute;
+  padding: 8px;
+  border-radius: 3px;
+  box-shadow: var(--shadow-low);
+  z-index: var(--z-low);
+
+  gap: 9px;
+  flex-direction: column;
+}
+
+.comment-date {
+  @include typo-font-tiny;
+
+  margin-top: 6px;
+  color: var(--neutrals-grey-500);
+}
+
+.comment-content {
+  @include typo-paragraph-small;
+
+  margin-top: 8px;
+}
+
+.user-actions {
+  @include typo-font-small;
+
+  margin-top: 10px;
+  color: var(--neutrals-grey-500);
+  cursor: pointer;
+  width: fit-content;
+  gap: 10px;
+  position: relative;
+}
+
+.user-actions-delete .delete-toast,
+.user-actions-more .more-toast {
+  visibility: hidden;
+}
+
+.user-actions-delete:hover .delete-toast,
+.user-actions-more:hover .more-toast {
+  visibility: visible;
+}
+
+.actions-mod-menu {
+  position: absolute;
+  bottom: 20px;
+  left: 120px;
+  width: 293px;
+  border-radius: 8px;
+  background: var(--neutrals-white);
+  box-shadow: var(--shadow-low);
+  box-sizing: border-box;
+  z-index: var(--z-high);
+}
+
+.mod-menu-item {
+  @include typo-font-small;
+
+  gap: 8px;
+  justify-content: center;
+  height: 48px;
+  color: var(--neutrals-black);
+  font-weight: var(--weight-medium);
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.mod-menu-item:hover {
+  background: var(--neutrals-grey-50);
+}
+
+.mod-menu-icon{
+  color: var(--neutrals-grey-400);
+}
+
+.comment-photos {
+  margin-top: 12px;
+}
+
+.photo {
+  object-fit: cover;
+  height: 64px;
+  width: 64px;
+  border-radius: 6px;
+}
+
+.photo + .photo {
+  margin-left: 8px;
+}
+
+.replies {
+  transition: height .3s;
+  margin-top: 12px;
+}

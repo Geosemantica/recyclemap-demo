@@ -1,0 +1,60 @@
+@import "src/assets/styles/abstracts/mixins.scss";
+
+.select-button {
+  @include typo-font-small;
+  display: flex;
+  gap: 6px;
+  width: max-content;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  padding: 8px 10px 8px 13px;
+  border: var(--border-thin);
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: var(--weight-medium);
+  color: var(--neutrals-black);
+}
+
+.no-style{
+  border: none;
+}
+
+.select-button.selected {
+  font-weight: var(--weight-semibold);
+}
+
+.no-style.selected {
+  font-weight: var(--weight-medium);
+}
+
+.select-button:not(.selected) .prefix svg-icon {
+  color: var(--neutrals-grey-400);
+}
+
+.selected.primary{
+  color: var(--brand-primary-green);
+  border: var(--border-success);
+  background-color: var(--status-success-bg);
+}
+.selected.secondary{
+  color: var(--neutrals-grey-400);
+  border: var(--border-thick);
+  background-color: var(--neutrals-grey-50);
+}
+
+
+.select-button:not(.selected):hover {
+  background: var(--neutrals-grey-50);
+  border-color: var(--neutrals-grey-400);
+}
+
+.no-style:not(.selected):hover {
+  background: none;
+}
+
+.prefix, .postfix {
+  display: flex;
+  align-items: center;
+}

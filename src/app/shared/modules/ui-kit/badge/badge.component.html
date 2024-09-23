@@ -1,0 +1,11 @@
+<div class="badge" [ngClass]="classList">
+  <svg-icon
+    class="badge-icon"
+    *ngIf="badgeIcon"
+    [size]="size"
+    [key]="badgeIcon"
+  >
+  </svg-icon>
+
+  <p class="badge-text">{{ badgeText }}</p>
+</div>

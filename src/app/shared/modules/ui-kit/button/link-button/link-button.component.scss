@@ -1,0 +1,55 @@
+@import "src/assets/styles/abstracts/mixins.scss";
+
+:host {
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  margin: 0;
+  text-decoration: none;
+  border: none;
+  background: none;
+}
+
+:host:active, :host:hover {
+  .primary {
+    color: var(--brand-primary-green-darker);
+  }
+
+  .secondary {
+    color: var(--neutrals-grey-500);
+  }
+}
+
+.rc-link-button {
+  @include typo-paragraph-small;
+
+  line-height: var(--lh-xxs);
+  font-weight: var(--weight-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.prefix, .postfix {
+  display: flex;
+  align-items: center;
+}
+
+.prefix {
+  margin-right: 6px;
+}
+
+.postfix {
+  margin-left: 6px;
+}
+
+.primary {
+  color: var(--brand-primary-green);
+}
+
+.secondary {
+  color: var(--neutrals-grey-400);
+}

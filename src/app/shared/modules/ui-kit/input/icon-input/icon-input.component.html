@@ -1,0 +1,16 @@
+<rc-input
+  #inputRef
+  [prefix]="prefix"
+  [placeholder]="placeholder"
+  [value]="value"
+  [disabled]="disabled"
+  [error]="hasError"
+  (controlFocus)="onFocus()"
+  (controlBlur)="onBlur()"
+  (valueChange)="onChange($event)"
+>
+</rc-input>
+
+<ng-template #prefix>
+  <svg-icon class="icon" [key]="iconName" size="md"></svg-icon>
+</ng-template>

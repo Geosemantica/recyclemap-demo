@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="ui-kit-section">
+    <h2 class="title">{{ 'Markers' }}</h2>
+
+    <div class="content markers">
+      <rc-marker
+        *ngFor="let marker of markers"
+        [marker]="marker"
+      />
+    </div>
+  </div>
+
+  <div class="ui-kit-section">
+    <h2 class="title">{{ 'Public filters' }}</h2>
+
+    <div class="content filters">
+      <rc-points-filters></rc-points-filters>
+    </div>
+  </div>
+
+  <div class="ui-kit-section">
+    <h2 class="title">{{ 'Service organization form' }}</h2>
+
+    <div class="content service-organization">
+      <rc-service-organization />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div
+  class="select-filter-item"
+  [ngClass]="{ active: isChecked }"
+  (click)="onClick()"
+>
+  <div>
+    <span
+      class="radio-indicator"
+      [ngClass]="{ active: isChecked }"
+    >
+    </span>
+  </div>
+
+
+  <div class="option-text-wrapper">
+    <ng-content></ng-content>
+
+    <div *ngIf="optionDescription" class="option-description">
+      {{ optionDescription }}
+    </div>
+  </div>
+</div>

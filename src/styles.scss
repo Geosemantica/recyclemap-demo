@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+@charset "utf-8";
+
+@import "../node_modules/normalize.css/normalize.css";
+@import "../node_modules/include-media/dist/include-media";
+@import "assets/styles/abstracts/variables.scss";
+@import "assets/styles/abstracts/mixins";
+
+
+@import "assets/styles/base/fonts";
+@import "assets/styles/base/base";
+@import "assets/styles/base/typography";
+

@@ -1,0 +1,35 @@
+@import "src/assets/styles/abstracts/mixins";
+
+.page-container {
+  position: relative;
+  height: calc(100vh - var(--header-height));
+  display: flex;
+  flex-direction: row;
+
+  .workpanel-container {
+    padding: 0;
+    position: relative;
+    max-width: 597px;
+    flex-direction: column;
+    display: flex;
+    z-index: var(--z-middle);
+    box-shadow: var(--shadow-sidebar);
+
+    .workpanel-content{
+      overflow-y: auto;
+      height: 100%;
+      background: var(--neutrals-white);
+    }
+  }
+
+  .map-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    min-width: 384px;
+    z-index: var(--z-low);
+    height: 100%;
+  }
+}

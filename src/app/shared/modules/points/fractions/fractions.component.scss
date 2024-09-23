@@ -1,0 +1,31 @@
+@import "src/assets/styles/abstracts/mixins.scss";
+
+.fractions-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.fraction-item {
+  @include typo-font-small;
+
+  display: flex;
+  align-items: center;
+  color: var(--neutrals-white);
+  padding: 4px 6px;
+  border-radius: 6px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  font-weight: var(--weight-medium);
+}
+
+.fraction-item p {
+  margin: 0;
+  font-weight: 500;
+}
+
+.fraction-icon {
+  width: 14px;
+  height: 14px;
+  margin-right: 4px;
+  color: var(--neutrals-white);
+}

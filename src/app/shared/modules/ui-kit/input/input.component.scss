@@ -1,0 +1,147 @@
+@import "src/assets/styles/abstracts/mixins";
+
+:host {
+  width: 100%;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+input {
+  @include typo-paragraph-small;
+
+  border-radius: 8px;
+  border: var(--border-searchbar);
+  background: var(--neutrals-white);
+  color: var(--neutrals-black);
+  width: 100%;
+  box-sizing: border-box;
+  font-weight: var(--weight-medium);
+}
+
+input.primary-left-radius-only {
+  border-radius: 8px 0 0 8px;
+}
+
+input.primary {
+  background: var(--neutrals-white);
+}
+
+input.primary-grey {
+  background-color: var(--neutrals-grey-50);
+  color: var(--neutrals-grey-600);
+}
+
+input.medium {
+  height: 40px;
+  padding: 12px;
+}
+
+input.large {
+  height: 44px;
+  padding: 14px 12px 14px 44px;
+}
+
+input.large::placeholder {
+  color: var(--neutrals-grey-400);
+}
+
+input:not(:read-only,.error,:focus):hover {
+  border-color: var(--neutrals-grey-400)
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--brand-primary-green);
+}
+
+input::placeholder {
+  color: var(--neutrals-grey-350);
+}
+
+input.medium-weight::placeholder {
+  font-weight: var(--weight-medium);
+}
+
+input.regular-weight::placeholder {
+  font-weight: var(--weight-regular);
+}
+
+.prefix, .postfix {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+}
+
+.prefix {
+  pointer-events: none;
+  margin-top: auto;
+  margin-bottom: auto;
+  top: 0;
+  bottom: 0;
+  left: 12px;
+}
+
+.postfix {
+  cursor: pointer;
+  margin-top: auto;
+  margin-bottom: auto;
+  top: 0;
+  bottom: 0;
+  right: 12px;
+}
+
+.postfix.skip-point-events {
+  pointer-events: none;
+}
+
+input.big-padding-right {
+  padding-right: 32px;
+}
+
+input.big-padding-left {
+  padding-left: 40px;
+}
+
+input.error {
+  border-color: var(--status-error);
+}
+
+input.dropdown {
+  cursor: pointer;
+}
+
+input.floating{
+  box-shadow: var(--shadow-map-item);
+  border: 1px solid transparent;
+  -webkit-appearance: none;
+}
+
+input.disabled {
+  background: var(--neutrals-grey-50);
+  color: var(--neutrals-grey-400);
+}
+
+input[type="time"]::-webkit-inner-spin-button {
+  display: none;
+}
+input[type="time"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+input[type="time"]:not(.disabled) {
+  cursor: text;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}

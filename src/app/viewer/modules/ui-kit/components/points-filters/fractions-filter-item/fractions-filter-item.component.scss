@@ -1,0 +1,42 @@
+@import "src/assets/styles/abstracts/mixins.scss";
+
+.filter-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 68px;
+  margin-top: 14px;
+
+
+  .filter-item-button {
+    .filter-item-icon {
+      width: fit-content;
+      padding: 10px;
+      border-radius: 8px;
+      background-color: var(--neutrals-grey-100);
+    }
+
+    .filter-item-name {
+      @include typo-font-tiny;
+
+      margin-top: 6px;
+      color: var(--neutrals-grey-500);
+    }
+
+    .filter-item-name.active {
+      font-weight: var(--weight-bold);
+    }
+  }
+
+  .filter-item-button,
+  .filter-item-button * {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+}
+
+

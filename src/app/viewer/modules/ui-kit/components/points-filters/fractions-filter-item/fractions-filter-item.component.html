@@ -1,0 +1,20 @@
+<div class="filter-item">
+  <div class="filter-item-button">
+    <div class="filter-item-icon" [ngStyle]="{ background: isActive ? filterItem.color : greyBackground }">
+      <svg-icon
+        [key]="getIconByName"
+        size="lg"
+        [color]="isActive ? whiteIcon : greyIcon"
+      >
+      </svg-icon>
+    </div>
+
+    <span
+      class="filter-item-name"
+      [ngClass]="{ active: isActive }"
+      [ngStyle]="{ color: isActive ? filterItem.color : greyText }"
+    >
+      {{ 'RECYCLE_POINTS.FRACTION_NAME.' + filterItem.name | translate }}
+    </span>
+  </div>
+</div>

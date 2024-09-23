@@ -1,0 +1,6 @@
+<button class="select-button" [ngClass]="classList" (click)="onSelect()">
+  <span *ngIf="prefixIcon" class="prefix">
+    <svg-icon [size]="iconSize" [key]="prefixIcon"></svg-icon>
+  </span>
+  <ng-content></ng-content>
+</button>

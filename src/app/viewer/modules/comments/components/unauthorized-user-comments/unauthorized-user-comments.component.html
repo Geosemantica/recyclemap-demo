@@ -1,0 +1,18 @@
+<ng-container *ngIf="publicComments | async as comments">
+  <rc-base-comments-card>
+    <ng-container commentItem>
+      <rc-comment-item
+        *ngFor="let comment of comments; trackBy: 'id' | rcCdkTrackByProperty"
+        [parentCommentId]="comment.parentCommentId"
+        [commentId]="comment.commentId"
+        [message]="comment.message"
+        [photos]="comment.photoset"
+        [publicReplies]="comment.replies"
+        [date]="comment.timestamp"
+        [user]="comment.user"
+        (replyClicked)="onReplyClick($event)"
+      >
+      </rc-comment-item>
+    </ng-container>
+  </rc-base-comments-card>
+</ng-container>

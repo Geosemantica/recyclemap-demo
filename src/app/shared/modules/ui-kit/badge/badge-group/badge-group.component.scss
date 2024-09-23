@@ -1,0 +1,16 @@
+.badges-container{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row-list {
+  flex-direction: row;
+  column-gap: 12px;
+  row-gap: 6px;
+}
+
+.colum-list {
+  flex-direction: column;
+  align-items: center;
+  row-gap: 4px;
+}

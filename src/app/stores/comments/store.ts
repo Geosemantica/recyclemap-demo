@@ -204,13 +204,7 @@ export class RcCommentsStore extends EntityStore<RcCommentsState> {
         "edited": false,
         "commentStatus": null,
       }
-    ])
-    this.update({
-      scrollNavigationState: {
-        totalResults: 9,
-        currentAmount: 9
-      }
-    });
+    ]);
   }
 }
 

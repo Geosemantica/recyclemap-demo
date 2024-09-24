@@ -34,7 +34,7 @@ export class RcServiceOrganizationFormComponent  {
   ) {
   }
 
-  public onSubmit(): void {
+  public onSubmitButtonClick(): void {
     const form = this.form.submit();
 
     if (!form) return;

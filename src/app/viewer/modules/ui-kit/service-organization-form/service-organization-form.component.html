@@ -7,7 +7,7 @@
       {{ 'POINT_FORM.SERVICE_ORGANIZATION.NAME' | translate }}
     </rc-label-description>
 
-    <div>
+    <div class="new-organization-field">
       <rc-input
         rcFormControl
         class="new-organization-field-input"
@@ -172,7 +172,7 @@
   <button
     rcButton
     size="lg"
-    (click)="onSubmit()"
+    (click)="onSubmitButtonClick()"
   >
     {{ 'ACTIONS.SAVE' | translate }}
   </button>

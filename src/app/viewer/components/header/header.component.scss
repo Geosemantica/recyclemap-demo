@@ -27,7 +27,7 @@ $main-gap-mobile: 12px;
     }
   }
 
-  .header-menu-btn{
+  .header-menu-btn {
     background: unset;
     border: unset;
     padding: 0;
@@ -41,7 +41,7 @@ $main-gap-mobile: 12px;
     overflow: hidden;
 
   }
-  .desktop-nav, .logos{
+  .desktop-nav, .logos {
     gap: $main-gap;
   }
 
@@ -102,7 +102,6 @@ $main-gap-mobile: 12px;
     color: var(--fraction-plastic-orange) !important;
     font-weight: var(--weight-semibold) !important;
   }
-
 }
 
 .main-nav--hidden {

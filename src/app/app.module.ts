@@ -2,7 +2,6 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { commonIcons } from '@app/svg/common';
-import { socialIcons } from '@app/svg/social';
 import { SvgIconsModule } from '@ngneat/svg-icon';
 import { TranslateLoader, TranslateModule, TranslateParser, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -18,7 +17,7 @@ import { RcUiKitModule } from './shared/modules/ui-kit/ui-kit.module';
 import { fractionsIcons } from '@app/svg/fractions';
 import { HeaderComponent } from "@app/viewer/components/header/header.component";
 import { ViewerModule } from "@app/viewer/viewer.module";
-import {LANGUAGES} from "@app/app.models";
+import { LANGUAGES } from "@app/app.models";
 
 function HttpLoaderFactory(http: HttpClient): TranslateLoader {
   return new TranslateHttpLoader(
@@ -40,7 +39,7 @@ function HttpLoaderFactory(http: HttpClient): TranslateLoader {
     TranslateModule,
     RcUiKitModule,
     SvgIconsModule.forRoot({
-      icons: [...commonIcons, ...socialIcons, ...fractionsIcons],
+      icons: [...commonIcons, ...fractionsIcons],
       sizes: {
         xxs: '12px',
         xs: '14px',

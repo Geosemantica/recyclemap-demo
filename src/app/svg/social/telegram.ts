@@ -1,4 +1,0 @@
-export const appTelegramIcon = {
-    data: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_1811_372331)"><path d="M23.9315 3.76884L20.3097 20.8491C20.0365 22.0546 19.3239 22.3545 18.3113 21.7868L12.7929 17.7202L10.1303 20.2812C9.83569 20.5758 9.58916 20.8224 9.02125 20.8224L9.41767 15.2021L19.6454 5.9601C20.0901 5.56368 19.549 5.34398 18.9543 5.74045L6.31028 13.7019L0.866901 11.9982C-0.317139 11.6285 -0.33853 10.8141 1.11332 10.2463L22.4046 2.04371C23.3903 1.67405 24.253 2.26331 23.9315 3.76884Z" fill="url(#paint0_linear_1811_372331)"/></g><defs><linearGradient id="paint0_linear_1811_372331" x1="16.0079" y1="5.29782" x2="11.5841" y2="17.599" gradientUnits="userSpaceOnUse"><stop stop-color="#37AEE2"/><stop offset="1" stop-color="#1E96C8"/></linearGradient><clipPath id="clip0_1811_372331"><rect width="24" height="24" fill="white"/></clipPath></defs></svg>`,
-    name: 'telegram'
-};

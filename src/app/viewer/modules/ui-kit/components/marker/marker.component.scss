@@ -91,6 +91,10 @@ $small-marker-diameter: 22px;
     z-index: var(--z-highest);
   }
 
+  .pin-status.pin-status-myaor {
+    background-color: var(--status-error);
+  }
+
   .restricted {
     width: 14px;
     height: 14px;
@@ -178,10 +182,6 @@ $small-marker-diameter: 22px;
 .pin-status-icon {
   margin-left: 1px;
   color: white;
-}
-
-.pin-status-myaor {
-  background-color: var(--status-error);
 }
 
 .small-pin-icon {

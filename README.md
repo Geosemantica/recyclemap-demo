@@ -45,3 +45,7 @@
 
 - Visit the **UI kit demo** page to view markers, public filters, and the service organization form.
 - Visit the **Comments module demo** page to view the public version of the comments block.
+
+## License
+
+This code is private and proprietary. It cannot be copied, modified, distributed, or used under any circumstances without explicit permission from the owner. Unauthorized use of this code is strictly prohibited.
